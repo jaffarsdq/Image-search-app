@@ -8,13 +8,12 @@ function App() {
   const [searchQ, setSearchQ] = useState()
 
   const data = LoadImages();
-  console.log(data);
 
   const searchData = SearchImages(searchQ);
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      setSearchQ(query);
+      setSearchQ(query)
     }
   }
 
