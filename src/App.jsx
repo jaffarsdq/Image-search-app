@@ -12,6 +12,12 @@ function App() {
 
   const searchData = SearchImages(searchQ);
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      setSearchQ(query);
+    }
+  }
+
   function reset () {
     setQuery('');
     setSearchQ('')
@@ -27,6 +33,7 @@ function App() {
               className="inputStyle py-2 ps-2"
               type="text"
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyPress}
               placeholder="Search for images here..."
               value={query}
             />
